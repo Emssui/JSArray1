@@ -1,5 +1,5 @@
 // array cardio 1
-// Ex1
+
 const inventors = [
     {first: "Albert1", last: "Einstein1", year: 1560, passed: 1660},
     {first: "Albert2", last: "Einstein2", year: 1660, passed: 1760},
@@ -12,7 +12,8 @@ const inventors = [
 ];
 
 
-
+// Ex1
+// Active in the 16 century
 const filtering = inventors.filter(function(inventor) {
 
     if(inventor.year >= 1500 && inventor.year <= 1600 ){
@@ -23,11 +24,13 @@ const filtering = inventors.filter(function(inventor) {
 console.table(filtering);
 
 // Ex2
+// Console logs the just the names
 const fullName = inventors.map(inventor => inventor.first + " " +  inventor.last);
 
 console.log(fullName);
 
 // Ex3
+// The smallest year is on top in the table
 const sortage = inventors.sort(function(first, second) {
     
     if(first.year > second.year){
@@ -42,14 +45,16 @@ const sortage = inventors.sort(function(first, second) {
 console.table(sortage);
 
 // Ex4
+// How long they lived 
 const age = inventors.reduce(function(total, inventor) {
 
-    return total + (inventor.passed - inventor.year)
+    return total + (inventor.passed - inventor.year);
 },0);
 
 console.table(age);
 
 // Ex5
+// The oldest is on top of the table
 const oldest = inventors.sort(function(a, b){
 
     const firstguy = a.passed - a.year;
